@@ -81,6 +81,17 @@ export function StartFeed() {
   });
 }
 
+export function StartCalibrate() {
+  const payload = JSON.stringify({ command: 'CALIBRATE' });
+
+  wss.clients.forEach((client) => {
+    if (client.readyState === 1) {
+      client.send(payload);
+    }
+  });
+}
+
+
 export function sendSensorData(data) {
   const payload = JSON.stringify({ command: 'SENSORS', data: data });
 
