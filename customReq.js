@@ -225,7 +225,7 @@ router.put('/CONFIG', (req, res) => {
   res.status(200).json({ ok: true, message: 'Sent calibrate request' });
 });
 
-router.put('/calibrate', (req, res) => {
+router.post('/calibrate', (req, res) => {
 StartCalibrate();
   res.status(200).json({ ok: true, message: 'Sent update config request' });
 });
