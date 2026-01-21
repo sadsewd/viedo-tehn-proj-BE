@@ -6,7 +6,6 @@ import {
   SendGlobalConfig,
   sendImages,
   shutdownAllDevices,
-  StartCalibrate,
   StartFeed,
   UpdateGlobalConfig,
 } from './wsCommands.js';
@@ -222,12 +221,12 @@ router.post('/GET_CONFIG', (req, res) => {
 });
 
 router.put('/CONFIG', (req, res) => {
-  StartCalibrate();
+  UpdateGlobalConfig();
   res.status(200).json({ ok: true, message: 'Sent calibrate request' });
 });
 
 router.put('/calibrate', (req, res) => {
-
+StartCalibrate();
   res.status(200).json({ ok: true, message: 'Sent update config request' });
 });
 
