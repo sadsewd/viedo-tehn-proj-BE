@@ -6,6 +6,7 @@ import {
   SendGlobalConfig,
   sendImages,
   shutdownAllDevices,
+  StartCalibrate,
   StartFeed,
   UpdateGlobalConfig,
 } from './wsCommands.js';
