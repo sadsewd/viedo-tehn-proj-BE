@@ -235,7 +235,7 @@ router.get('/SensorData', (req, res) => {
   db.query(
     `SELECT *
 FROM Sensori
-WHERE datums >= NOW() - INTERVAL 1 DAY limit 500;
+WHERE datums >= NOW() - INTERVAL 1 DAY limit 500 order by datums desc;
 `,
     (err, result) => {
       if (err) {
@@ -251,7 +251,7 @@ router.get('/NewEvents', (req, res) => {
   db.query(
     `SELECT *
 FROM Notikumi
-order by datums
+order by datums desc
 limit 4;`,
     (err, result) => {
       if (err) {
